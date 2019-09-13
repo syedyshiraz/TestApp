@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">F</string>
+    <string name="Register_user">Register/Login</string>
+    <string name="Phone">Phone</string>string>
 </resources>
