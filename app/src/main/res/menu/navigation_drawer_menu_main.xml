@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menu_qp_and_syllabus"
-        android:title="Academic Material"
-        android:icon="@drawable/icon_drawable" />
+        android:title="Academic Material"/>
+        <!--android:icon="@drawable/icon_drawable"--> />
 
-    <item
+    <!--<item
         android:id="@+id/menu_about_uvce"
         android:title="About UVCE"
         android:icon="@drawable/icon_about_uvce"/>
@@ -37,5 +37,5 @@
     <item
         android:id="@+id/settings"
         android:title="Settings"
-        android:icon="@drawable/settingsnavigation_foreground"/>
+        android:icon="@drawable/settingsnavigation_foreground"/> -->
 </menu>

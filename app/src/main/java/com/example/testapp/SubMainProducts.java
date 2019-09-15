@@ -42,7 +42,7 @@ public class SubMainProducts extends AppCompatActivity {
         clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
         category=getIntent().getStringExtra("subcategory");
         Toast.makeText(getApplicationContext(),category,Toast.LENGTH_LONG).show();
-        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("subproducts").child(category.trim());
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Products").child(category.trim());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
