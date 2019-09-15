@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //startActivity(new Intent(this,SettingsActivity.class));
 
-        LocationManager locationManager=(LocationManager) getSystemService(Context.LOCATION_SERVICE);
+       /* LocationManager locationManager=(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.getAllProviders();
         if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
