@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_qp_and_syllabus"
+        android:title="Academic Material"
+        android:icon="@drawable/icon_drawable" />
+
+    <item
+        android:id="@+id/menu_about_uvce"
+        android:title="About UVCE"
+        android:icon="@drawable/icon_about_uvce"/>
+
+    <item
+        android:id="@+id/menu_associations"
+        android:title="Associations"
+        android:icon="@drawable/icon_associations"/>
+
+    <item
+        android:id="@+id/menu_placement_office"
+        android:title="Placement Office"
+        android:icon="@drawable/icon_placement_office"/>
+
+    <item
+        android:id="@+id/menu_adhamya"
+        android:title="Adhamya"
+        android:icon="@drawable/icon_adhamya"/>
+
+    <item
+        android:id="@+id/menu_ieee"
+        android:title="IEEE"
+        android:icon="@drawable/icon_ieee"/>
+
+    <item
+        android:id="@+id/menu_fest"
+        android:title="Fest"
+        android:icon="@drawable/icon_fest"/>
+
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/settingsnavigation_foreground"/>
+</menu>

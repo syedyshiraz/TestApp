@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:id="@+id/text"/>
-
-    <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yeahh"
-        android:layout_below="@id/text"/>
+        android:layout_width="match_parent">
 
 
+    <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/navigation_drawer_main"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:fitsSystemWindows="false"
+            tools:openDrawer="start">
 
 
+        <include layout="@layout/activity_main"/>
+
+
+        <com.google.android.material.navigation.NavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/navigation_view"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="false"
+                app:headerLayout="@layout/navigation_drawer_header_main"
+                app:menu="@menu/navigation_drawer_menu_main"/>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 </RelativeLayout>
