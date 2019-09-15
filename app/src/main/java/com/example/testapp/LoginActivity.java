@@ -3,21 +3,16 @@ package com.example.testapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.button.MaterialButton;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -68,8 +63,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-        Button button=(Button)findViewById(R.id.yeah);
-        final EditText editText=(EditText) findViewById(R.id.otp);
+        Button button=(Button)findViewById(R.id.register);
+        final EditText editText=(EditText) findViewById(R.id.phone);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
