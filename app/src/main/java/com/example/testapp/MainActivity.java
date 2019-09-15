@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        new NotificationsClass("tits","this is",getApplicationContext(),null,null,getIntent(),1,"").send();
+        /*new NotificationsClass("tits","this is",getApplicationContext(),null,null,getIntent(),1,"").send();
 
         new AlertDialog.Builder(this).setTitle("Yeah").setMessage("Why even").setNegativeButton("closethisshit", new DialogInterface.OnClickListener() {
             @Override
@@ -76,10 +76,10 @@ public class MainActivity extends AppCompatActivity {
         }).setPositiveButton("yeah", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(getApplicationContext(),"fuck off now"+thelocation.getLongitude(),Toast.LENGTH_LONG).show();
+                startActivity(Intent.createChooser(new Intent().setAction(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT,"yeahh"),null));
             }
         }).show();
 
-
+        */
     }
 }

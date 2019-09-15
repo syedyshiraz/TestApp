@@ -96,7 +96,7 @@
         android:padding="5dp"
         app:strokeWidth="1dp"
         app:strokeColor="@color/Grey"
-        android:id="@+id/darktheme"
+        android:id="@+id/testsize"
         android:layout_marginHorizontal="5dp">
 
         <LinearLayout
