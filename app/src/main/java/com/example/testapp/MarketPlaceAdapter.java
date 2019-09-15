@@ -36,7 +36,7 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
     Activity activity;
     Context context;
     ViewGroup.LayoutParams mParams;
-    public IeeeAdapter(List<String> mclubs, Activity activity, Context context){
+    public MarketPlaceAdapter(List<String> mclubs, Activity activity, Context context){
         this.clubs=mclubs;
         this.activity=activity;
         this.context=context;
@@ -60,12 +60,17 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
             holder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), ItemContent.class);
-                    intent.putExtra("clubname", imagename);
-                    v.getContext().startActivity(intent);
+                    if(activity.getClass().getSimpleName().equals("MarketPlace")) {
+                        Intent intent = new Intent(v.getContext(), SubMainProducts.class);
+                        intent.putExtra("subcategory", imagename);
+                        v.getContext().startActivity(intent);
+                    }
+                    else{
+                        v.getContext().startActivity(new Intent(v.getContext(),ItemContent.class).putExtra("subcategory", imagename));
+                    }
                 }
             });
-            StorageReference storageReference = FirebaseStorage.getInstance().getReference("logo/" + imagename + ".jpg");
+            StorageReference storageReference = FirebaseStorage.getInstance().getReference("products/" + imagename + ".jpg");
 
             GlideApp.with(context).load(storageReference).diskCacheStrategy(DiskCacheStrategy.ALL).override(holder.imageView.getWidth(),holder.imageView.getWidth()).fitCenter().listener(new RequestListener<Drawable>() {
                 @Override
@@ -80,6 +85,8 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
                     return false;
                 }
             }).into(holder.imageView);
+
+            holder.textView.setText(imagename);
 
 
         }

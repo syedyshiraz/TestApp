@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,19 +17,20 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MarketPlace extends AppCompatActivity {
+public class SubMainProducts extends AppCompatActivity {
 
     RecyclerView recyclerView;
     MarketPlaceAdapter marketPlaceAdapter;
     List<String> clubs=new ArrayList<>();
+    String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_market_place);
+        setContentView(R.layout.activity_sub_main_products);
 
         recyclerView=findViewById(R.id.recylerview);
-        RecyclerView.LayoutManager layoutManager=new GridLayoutManager(this,2);
+        RecyclerView.LayoutManager layoutManager=new GridLayoutManager(this,4);
         recyclerView.setLayoutManager(layoutManager);
         marketPlaceAdapter=new MarketPlaceAdapter(clubs,this,this);
         recyclerView.setAdapter(marketPlaceAdapter);
@@ -38,7 +40,9 @@ public class MarketPlace extends AppCompatActivity {
     public void populateTheGrid(){
         clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
         clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
-        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Products");
+        category=getIntent().getStringExtra("subcategory");
+        Toast.makeText(getApplicationContext(),category,Toast.LENGTH_LONG).show();
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("subproducts").child(category.trim());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
