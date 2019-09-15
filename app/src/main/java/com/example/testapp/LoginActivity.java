@@ -38,9 +38,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //TODO
         setTheme(getSharedPreferences("settings", MODE_PRIVATE).getBoolean("dark", true) ? R.style.AppTheme : R.style.LightTheme);
         setContentView(R.layout.activity_login);
+        //TODO change phoneNumber
 
         phone=(EditText) findViewById(R.id.phone);
         otp=(EditText) findViewById(R.id.otp);
