@@ -31,10 +31,13 @@ public class MarketPlace extends AppCompatActivity {
     NavigationView mNavigationView;
     DrawerLayout mDrawerLayout;
     Toolbar mToolbar;
+    Boolean darktheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        darktheme=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("dark",true);
+        setTheme(darktheme ?R.style.AppTheme:R.style.LightTheme);
         setContentView(R.layout.activity_market_place);
 
         mToolbar=findViewById(R.id.toolbar_main);
@@ -62,6 +65,12 @@ public class MarketPlace extends AppCompatActivity {
                         break;
                     case R.id.about:
                         startActivity(new Intent(MarketPlace.this,About.class));
+                        break;
+                    case R.id.admin:
+                        startActivity(new Intent(MarketPlace.this,Admin.class));
+                        break;
+                    case R.id.vendor:
+                        startActivity(new Intent(MarketPlace.this,VendorRegistration.class));
                         break;
                 }
                 mDrawerLayout.closeDrawer(GravityCompat.START);

@@ -17,7 +17,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Admin"></activity>
+        <activity android:name=".VendorRegistration"></activity>
+        <activity android:name=".ConfirmOrders" />
+        <activity android:name=".AddVendor" />
+        <activity android:name=".Admin_Add_Content" />
+        <activity android:name=".Admin" />
         <activity android:name=".Orders" />
         <activity android:name=".About" />
         <activity android:name=".ProductPage" />

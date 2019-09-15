@@ -5,6 +5,15 @@
         android:icon="@drawable/orders" />
 
     <item
+            android:id="@+id/admin"
+            android:title="Admin"/>
+
+
+    <item
+            android:id="@+id/vendor"
+            android:title="Vendor Registration"/>
+
+    <item
         android:id="@+id/settings"
         android:title="settings"
         android:icon="@drawable/setting"/>
@@ -13,30 +22,6 @@
         android:id="@+id/about"
         android:title="About"
         android:icon="@drawable/about"/>
-<!--
-    <item
-        android:id="@+id/menu_placement_office"
-        android:title="Placement Office"
-        android:icon="@drawable/icon_placement_office"/>
 
-    <item
-        android:id="@+id/menu_adhamya"
-        android:title="Adhamya"
-        android:icon="@drawable/icon_adhamya"/>
 
-    <item
-        android:id="@+id/menu_ieee"
-        android:title="IEEE"
-        android:icon="@drawable/icon_ieee"/>
-
-    <item
-        android:id="@+id/menu_fest"
-        android:title="Fest"
-        android:icon="@drawable/icon_fest"/>
-
-    <item
-        android:id="@+id/settings"
-        android:title="Settings"
-        android:icon="@drawable/settingsnavigation_foreground"/>
-        -->
 </menu>

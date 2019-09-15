@@ -65,6 +65,9 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
                         intent.putExtra("subcategory", imagename);
                         v.getContext().startActivity(intent);
                     }
+                    else if(activity.getClass().getSimpleName().equals("subMainProducts")){
+                        v.getContext().startActivity(new Intent(v.getContext(),ProductPage.class).putExtra("product",imagename));
+                    }
                     else{
                         v.getContext().startActivity(new Intent(v.getContext(),ItemContent.class).putExtra("subcategory", imagename));
                     }
@@ -74,6 +77,7 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
 
             if(activity.getClass().getSimpleName().equals("SubMainProducts"))
                 storageReference = FirebaseStorage.getInstance().getReference("subproducts/"+activity.getIntent().getStringExtra("subcategory") + "/" + imagename + ".jpg");
+
 
 
             GlideApp.with(context).load(storageReference).diskCacheStrategy(DiskCacheStrategy.ALL).override(holder.imageView.getWidth(),holder.imageView.getWidth()).fitCenter().listener(new RequestListener<Drawable>() {

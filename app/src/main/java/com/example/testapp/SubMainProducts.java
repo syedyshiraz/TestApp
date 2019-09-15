@@ -27,6 +27,8 @@ public class SubMainProducts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Boolean darktheme=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("dark",true);
+        setTheme(darktheme ?R.style.AppTheme:R.style.LightTheme);
         setContentView(R.layout.activity_sub_main_products);
 
         recyclerView=findViewById(R.id.recylerview);

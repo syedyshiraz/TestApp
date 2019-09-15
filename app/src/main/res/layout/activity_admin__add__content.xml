@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.venkibellu.myapplication.News_Adding"
+            android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="45dp"
+                android:hint="Enter Content Here">
+
+            <EditText
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/news_details_add"
+                    android:inputType="textMultiLine"
+                    android:gravity="start"
+                    android:textAlignment="viewStart" />
+        </com.google.android.material.textfield.TextInputLayout> -->
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dp">
+
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Add Image"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:id="@+id/choose_pic_news" />
+
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:padding="10dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:text="Post"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:textAllCaps="false"
+                    android:id="@+id/news_add_button" />
+
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:padding="10dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:text="Add File"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:textAllCaps="false"
+                    android:id="@+id/add_file_button" />
+
+
+
+
+        </LinearLayout>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:id="@+id/news_imageview"
+                android:layout_gravity="center" />
+
+        <TextView
+                android:id="@+id/file_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:text="No file selected for upload."
+                android:layout_marginBottom="20sp" />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buttonlinear"
+                    android:layout_centerHorizontal="true">
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/edit_delete_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="20sp"
+                        android:fontFamily="@font/nunito_extrabold"
+                        android:textAllCaps="false"
+                        android:text="Delete / Edit" />
+
+                <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_marginStart="30dp"
+                        android:background="@color/colorPrimary"
+                        android:text="Edit Clubs"
+                        android:layout_marginTop="20sp"
+                        android:id="@+id/editclubs"
+                        android:fontFamily="@font/nunito_extrabold"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="30dp"
+                        android:id="@+id/addmultipleimages"
+                        android:text="Add multiple images"
+                        android:background="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+                        android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@id/buttonlinear"
+                    android:visibility="gone"
+                    android:id="@+id/addimagesrecycler"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
