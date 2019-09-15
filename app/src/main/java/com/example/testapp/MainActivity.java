@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),FirebaseAuth.getInstance().getUid(),Toast.LENGTH_LONG).show();
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this,MarketPlace.class));
+        startActivity(new Intent(this, MarketPlace.class));
 
        /* LocationManager locationManager=(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.getAllProviders();

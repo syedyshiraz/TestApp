@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MarketPlace">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.drawerlayout.widget.DrawerLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recylerview"
-            android:scrollbars="vertical"/>
+            android:id="@+id/navigation_drawer_main"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:fitsSystemWindows="false"
+            tools:openDrawer="start">
 
-</RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recylerview"
+                android:scrollbars="vertical"/>
+
+
+        <com.google.android.material.navigation.NavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/navigation_view"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="false"
+                app:headerLayout="@layout/navigation_drawer_header_main"
+                app:menu="@menu/navigation_drawer_menu_main"/>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
