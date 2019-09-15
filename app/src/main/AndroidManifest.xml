@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
 
         <service
                 android:name=".MessagingService"
@@ -44,7 +45,8 @@
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyBy4OJwcrYJWCqtC1m6I-ZQ3gJVN1Kumn4" />
-        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+
+
     </application>
 
 </manifest>

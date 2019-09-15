@@ -35,12 +35,14 @@ public class LoginActivity extends AppCompatActivity {
     Activity activity=this;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(getSharedPreferences("settings", MODE_PRIVATE).getBoolean("dark", true) ? R.style.AppTheme : R.style.LightTheme);
         setContentView(R.layout.activity_login);
         //TODO change phoneNumber
+        sOtp="";
 
         phone=(EditText) findViewById(R.id.phoneN);
         otp=(EditText) findViewById(R.id.otp);
@@ -49,14 +51,16 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Toast.makeText(context,"clicked me",Toast.LENGTH_LONG).show();
                 sPhone = phone.getText().toString();
-                if (sPhone.isEmpty() || sPhone.length() < 10)
-                    new AlertDialog.Builder(context).setTitle("Try again!").setMessage("Please enter a valid phone number").setIcon(R.drawable.ic_error).setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                if (sPhone.isEmpty() || sPhone.length() < 10) {
+                    new AlertDialog.Builder(activity).setTitle("Try again!").setMessage("Please enter a valid phone number").setIcon(R.drawable.ic_error).setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
                         }
-                    });
+                    }).show();
+                }
                 else if(otp.getVisibility()==View.GONE){
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
                             "+91"+sPhone,        // Phone number to verify
@@ -93,14 +97,29 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     sOtp=otp.getText().toString();
                     if (sOtp.isEmpty() || sOtp.length() < 6)
-                        new AlertDialog.Builder(context).setTitle("Try again!").setMessage("Please enter a valid Otp").setIcon(R.drawable.ic_error).setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                        new AlertDialog.Builder(activity).setTitle("Try again!").setMessage("Please enter a valid Otp").setIcon(R.drawable.ic_error).setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dialogInterface.dismiss();
                             }
-                        });
+                        }).show();
                     else {
-                        registerwithphone();
+                        PhoneAuthCredential credential=PhoneAuthProvider.getCredential(mVerificationId,sOtp);
+                        FirebaseAuth.getInstance().signInWithCredential(credential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                if(authResult.getUser()!=null) {
+                                    Toast.makeText(getApplicationContext(), "Yay right otp", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                                    finish();
+                                }
+
+                                else
+                                    Toast.makeText(getApplicationContext(),"Nope try again ",Toast.LENGTH_LONG).show();
+
+
+                            }
+                        });
                     }
 
                 }
@@ -115,18 +134,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void registerwithphone(){
 
-        PhoneAuthCredential credential=PhoneAuthProvider.getCredential(mVerificationId,sOtp);
-        FirebaseAuth.getInstance().signInWithCredential(credential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                if(authResult.getUser()!=null)
-                    Toast.makeText(getApplicationContext(),"Yay right otp",Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(getApplicationContext(),"Nope try again bitch",Toast.LENGTH_LONG).show();
 
-
-            }
-        });
 
 
 
