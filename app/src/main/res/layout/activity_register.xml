@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Register">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extrabold"
+                android:layout_margin="30dp"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:text="Welcome to"
+                android:id="@+id/Welcome_to"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extrabold"
+                android:layout_margin="30dp"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:text="UVCE Connect"
+                android:layout_below="@id/Welcome_to"
+                android:layout_marginTop="0dp" />
+        </RelativeLayout>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:padding="13dp" />
+
+
+
+
+
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:hint="Email ID"
+        android:inputType="textEmailAddress"
+        android:padding="13dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:ems="10"
+        android:hint="Contact Number"
+        android:inputType="phone"
+        android:padding="13dp" />
+
+
+
+    <EditText
+        android:id="@+id/regno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:ems="10"
+        android:hint="Register Number"
+        android:inputType="textPersonName"
+        android:padding="13dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semester"
+            android:textColor="@color/Black"
+            android:textColorHighlight="@color/Black"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_semibold"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Semester:"
+            android:layout_weight="2"
+            android:fontFamily="@font/nunito_semibold"
+            android:entries="@array/semester_array" />
+
+
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/nunito_extrabold"/>
+
+
+    <TextView
+        android:id="@+id/skipbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Skip"
+        android:fontFamily="@font/nunito_semibold"
+        android:textSize="20sp"
+        android:layout_below="@id/registerbutton"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
