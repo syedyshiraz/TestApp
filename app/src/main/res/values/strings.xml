@@ -2,4 +2,8 @@
     <string name="app_name">F</string>
     <string name="Register_user">Register/Login</string>
     <string name="Phone">Phone</string>string>
+    <string name="about">A platform that connects
+                             buyers and sellers in the agricultural sector
+                                thereby eliminating the role of middlemen
+    </string>
 </resources>

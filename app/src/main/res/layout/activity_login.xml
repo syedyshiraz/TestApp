@@ -14,33 +14,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-    <EditText
-            android:id="@+id/phoneN"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <EditText
-            android:id="@+id/otp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
-            android:hint="Otp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/register" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/phoneN"/>
-    <com.google.android.material.button.MaterialButton
-            android:id="@+id/register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/phone"
-            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
-            android:text="@string/Register_user" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/phoneN"/>
+
+            <EditText
+                    android:id="@+id/phoneN"
+                    android:layout_width="179dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            <EditText
+                    android:id="@+id/otp"
+                    android:maxLength="15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
+                    android:hint="Otp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/register" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/phoneN"/>
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/otp"
+                    android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
+                    android:text="@string/Register_user" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/phoneN"/>
 
     <!--yooo-->
         </androidx.constraintlayout.widget.ConstraintLayout>
