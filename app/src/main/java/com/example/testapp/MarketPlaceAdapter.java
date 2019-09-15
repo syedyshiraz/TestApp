@@ -65,7 +65,7 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
                         intent.putExtra("subcategory", imagename);
                         v.getContext().startActivity(intent);
                     }
-                    else if(activity.getClass().getSimpleName().equals("subMainProducts")){
+                    else if(activity.getClass().getSimpleName().equals("SubMainProducts")){
                         v.getContext().startActivity(new Intent(v.getContext(),ProductPage.class).putExtra("product",imagename));
                     }
                     else{

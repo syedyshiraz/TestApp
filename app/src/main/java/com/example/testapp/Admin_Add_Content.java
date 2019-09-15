@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class Admin_Add_Content extends AppCompatActivity {
 
-    TextView product,date,
+    TextView product,date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

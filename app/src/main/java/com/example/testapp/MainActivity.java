@@ -31,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this,LoginActivity.class));
             finish();
         }
-        else
-            Toast.makeText(getApplicationContext(),FirebaseAuth.getInstance().getUid(),Toast.LENGTH_LONG).show();
+        else {
+            Toast.makeText(getApplicationContext(), FirebaseAuth.getInstance().getUid(), Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, MarketPlace.class));
+        }
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this, MarketPlace.class));
+
 
        /* LocationManager locationManager=(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.getAllProviders();
