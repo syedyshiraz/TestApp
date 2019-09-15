@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_qp_and_syllabus"
+    <item android:id="@+id/orders"
         android:title="Your Orders"
-        android:icon="@drawable/icon_drawable" />
+        android:icon="@drawable/orders" />
 
     <item
-        android:id="@+id/menu_about_uvce"
+        android:id="@+id/settings"
         android:title="settings"
-        android:icon="@drawable/icon_about_uvce"/>
+        android:icon="@drawable/setting"/>
 
     <item
-        android:id="@+id/menu_associations"
+        android:id="@+id/about"
         android:title="About"
-        android:icon="@drawable/icon_associations"/>
+        android:icon="@drawable/about"/>
 <!--
     <item
         android:id="@+id/menu_placement_office"
