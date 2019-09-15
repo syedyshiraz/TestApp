@@ -45,7 +45,7 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.gridcard,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.girdcard,parent,false);
         return new MyViewHolder(v);
     }
 
