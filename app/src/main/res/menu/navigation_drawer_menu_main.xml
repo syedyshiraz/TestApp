@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menu_qp_and_syllabus"
-        android:title="Academic Material"
+        android:title="Your Orders"
         android:icon="@drawable/icon_drawable" />
 
     <item
         android:id="@+id/menu_about_uvce"
-        android:title="About UVCE"
+        android:title="settings"
         android:icon="@drawable/icon_about_uvce"/>
 
     <item
         android:id="@+id/menu_associations"
-        android:title="Associations"
+        android:title="About"
         android:icon="@drawable/icon_associations"/>
-
+<!--
     <item
         android:id="@+id/menu_placement_office"
         android:title="Placement Office"
@@ -38,4 +38,5 @@
         android:id="@+id/settings"
         android:title="Settings"
         android:icon="@drawable/settingsnavigation_foreground"/>
+        -->
 </menu>
