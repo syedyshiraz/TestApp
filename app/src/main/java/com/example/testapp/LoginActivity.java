@@ -4,12 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< Updated upstream
-        =======
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
->>>>>>> Stashed changes
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     MaterialButton button;
     String sOtp,sPhone;
     Context context=this;
+    Activity activity=this;
 
 
     @Override
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //TODO change phoneNumber
 
-        phone=(EditText) findViewById(R.id.phone);
+        phone=(EditText) findViewById(R.id.phoneN);
         otp=(EditText) findViewById(R.id.otp);
         button=findViewById(R.id.register);
 
@@ -58,6 +58,35 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 else if(otp.getVisibility()==View.GONE){
+                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                            "+91"+sPhone,        // Phone number to verify
+                            60,                 // Timeout duration
+                            TimeUnit.SECONDS,   // Unit of timeout
+                            activity,
+                            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                @Override
+                                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                        FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Toast.makeText(getApplicationContext(),"You've signed in successfully",Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                                activity.finish();
+                            }
+                        });
+
+                                }
+                                @Override
+                                public void onVerificationFailed(@NonNull FirebaseException e) {
+
+                                }
+
+                                @Override
+                                public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                    super.onCodeSent(s, forceResendingToken);
+                                    mVerificationId=s;
+                                }
+                            });
                     otp.setVisibility(View.VISIBLE);
                     button.setText("Verify and Register");
                 }
@@ -70,25 +99,23 @@ public class LoginActivity extends AppCompatActivity {
                                 dialogInterface.dismiss();
                             }
                         });
+                    else {
+                        registerwithphone();
+                    }
 
                 }
-            });
+            }});
+        }
 
 
 
 
 
 
-
-            }
-        });
-
-
-    }
 
     public void registerwithphone(){
 
-        PhoneAuthCredential credential=PhoneAuthProvider.getCredential(mVerificationId,code);
+        PhoneAuthCredential credential=PhoneAuthProvider.getCredential(mVerificationId,sOtp);
         FirebaseAuth.getInstance().signInWithCredential(credential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
@@ -102,36 +129,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNumber,        // Phone number to verify
-                60,                 // Timeout duration
-                TimeUnit.SECONDS,   // Unit of timeout
-                this,
-                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                    @Override
-                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
 
-                        /*FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                Toast.makeText(getApplicationContext(),"You've signed in successfully",Toast.LENGTH_LONG).show();
-                            }
-                        });*/
-
-
-                    }
-
-                    @Override
-                    public void onVerificationFailed(@NonNull FirebaseException e) {
-
-                    }
-
-                    @Override
-                    public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                        super.onCodeSent(s, forceResendingToken);
-                        mVerificationId=s;
-                    }
-                });
 
     }
 }
