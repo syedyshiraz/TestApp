@@ -19,13 +19,15 @@
     <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Quantity"
-            app:layout_constraintEnd_toEndOf="parent" tools:layout_editor_absoluteY="97dp"/>
+            android:text="Quantity" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172" app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="118dp"/>
     <Spinner
             android:id="@+id/qty"
             android:layout_width="258dp" android:layout_height="17dp"
-            android:layout_marginStart="72dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
             app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -36,7 +38,8 @@
             android:layout_marginEnd="8dp"
             android:text="Date of order"
             app:layout_constraintBottom_toBottomOf="@+id/Dateo" app:layout_constraintEnd_toStartOf="@+id/Dateo"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@+id/Dateo"/>
+            app:layout_constraintHorizontal_bias="0.46" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/Dateo" app:layout_constraintVertical_bias="0.388"/>
     <EditText
             android:id="@+id/Dateo"
             android:layout_width="wrap_content"
@@ -54,9 +57,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp" android:text="Estimated Date"
             app:layout_constraintBottom_toBottomOf="@+id/eta" app:layout_constraintEnd_toStartOf="@+id/eta"
-            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintHorizontal_bias="0.534"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@+id/eta"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintVertical_bias="1.0"/>
     <EditText
             android:id="@+id/eta"
             android:layout_width="wrap_content"
@@ -70,7 +73,7 @@
             app:layout_constraintTop_toBottomOf="@+id/Dateo" app:layout_constraintVertical_bias="0.141"/>
     <TextView
             android:layout_width="63dp"
-            android:layout_height="40dp" android:layout_marginStart="48dp"
+            android:layout_height="40dp" android:layout_marginStart="56dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" android:text="Total cost"
             app:layout_constraintBottom_toBottomOf="@+id/cost"
