@@ -13,6 +13,6 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/image" />
 
 </RelativeLayout>

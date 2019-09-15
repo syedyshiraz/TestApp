@@ -72,6 +72,10 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
             });
             StorageReference storageReference = FirebaseStorage.getInstance().getReference("products/" + imagename + ".jpg");
 
+            if(activity.getClass().getSimpleName().equals("SubMainProducts"))
+                storageReference = FirebaseStorage.getInstance().getReference("subproducts/"+activity.getIntent().getStringExtra("subcategory") + "/" + imagename + ".jpg");
+
+
             GlideApp.with(context).load(storageReference).diskCacheStrategy(DiskCacheStrategy.ALL).override(holder.imageView.getWidth(),holder.imageView.getWidth()).fitCenter().listener(new RequestListener<Drawable>() {
                 @Override
                 public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

@@ -40,6 +40,8 @@ public class SubMainProducts extends AppCompatActivity {
     public void populateTheGrid(){
         clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
         clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
+        clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
+        clubs.add("spaceForLayoutThisIsn'taClubExactlyBut");
         category=getIntent().getStringExtra("subcategory");
         Toast.makeText(getApplicationContext(),category,Toast.LENGTH_LONG).show();
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Products").child(category.trim());
